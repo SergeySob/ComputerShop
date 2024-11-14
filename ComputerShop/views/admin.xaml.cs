@@ -23,5 +23,30 @@ namespace ComputerShop.views
         {
             InitializeComponent();
         }
+
+        private void btReturn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btAddPos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btEditPos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btDelPos_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btExport_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

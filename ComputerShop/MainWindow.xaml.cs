@@ -37,7 +37,7 @@ namespace ComputerShop
         private void btOrder_Click(object sender, RoutedEventArgs e)
         {
             Random random = new Random();
-            int cash = random.Next(5000, 50000);
+            int cash = random.Next(5000, 140000);
 
             storeCart storeCart = new storeCart(cash);
             storeCart.Show();

@@ -4,13 +4,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Xml.Linq;
 
 namespace ComputerShop
 {
     internal class Database
     {
-        private static string constring = "";
+        private static string constring = "Host=localhost;Username=postgres;Password=VEST777berto;Database=postgres";
 
+
+        public static async Task<List<item>> getItems(item item)
+        {
+            var data = new List<item>();
+
+            string query = "SELECT * FROM computer_shop.item WHERE 1=1";
+
+            if (item != null)
+            {
+                if (item.id.HasValue)
+                {
+                    query += $" AND id = {item.id}";
+                }
+
+                if (item.cost.HasValue)
+                {
+                    query += $" AND cost >= {item.cost}";
+                }
+
+                if (item.maxCost.HasValue)
+                {
+                    query += $" AND cost <= {item.maxCost}";
+                }
+
+                if (!string.IsNullOrEmpty(item.name))
+                {
+                    query += $" AND name = @name";
+                }
+            }
+
+
+            using (var conn = new NpgsqlConnection(constring))
+            {
+                await conn.OpenAsync();
+                
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    if (item != null)
+                    {
+                        cmd.Parameters.AddWithValue("@name", item.name);
+                    }
+
+                    var reader = await cmd.ExecuteReaderAsync();
+
+                    while (await reader.ReadAsync())
+                    {
+                        data.Add(new item
+                        {
+                            id = reader.GetInt32(0),
+                            description = reader.GetString(1),
+                            cost = reader.GetInt32(2),
+                            name = reader.GetString(3)
+                        });
+                    }
+                    return data;
+                }
+            }
+        }
         public static async Task<bool> login(string username, string password)
         {
             using (var conn = new NpgsqlConnection(constring))

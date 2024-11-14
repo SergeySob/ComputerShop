@@ -10,11 +10,70 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+        <Button Content="Назад" Grid.Column="3" x:Name="btReturn" Click="btReturn_Click"/>
+        <Button Content="Добавить позицию" Grid.Row="1" x:Name="btAddPos" Click="btAddPos_Click"/>
+        <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Text="Тестовое имя" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Text="Описание" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="Тестовое описание" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Text="Цена" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="Тестовая цена" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+        </Grid>
+        <Button Content="Изменить позицию" Grid.Row="2" x:Name="btEditPos" Click="btEditPos_Click"/>
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Text="Тестовое имя" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Text="Описание" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="Тестовое описание" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="2" Text="Цена" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="Тестовая цена" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+        </Grid>
+        <Button Content="Удалить позицию" Grid.Row="3" x:Name="btDelPos" Click="btDelPos_Click"/>
+        <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="40*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="id" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Text="Тестовое id" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" Text="Или" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2"/>
+            <TextBlock Grid.Column="2" Text="Название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="2" Grid.Row="1" Text="Тестовое название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <Button Content="Экспортировать данные" Grid.Row="4" Grid.ColumnSpan="4" x:Name="btExport" Click="btExport_Click"/>
     </Grid>
 </Window>
