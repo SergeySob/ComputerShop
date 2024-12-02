@@ -97,5 +97,59 @@ namespace ComputerShop
                 }
             }
         }
+
+        public static async Task<bool> deleteItem(item item)
+        {
+            using (var conn = new NpgsqlConnection(constring))
+            {
+                await conn.OpenAsync();
+                string query = "DELETE FROM computer_shop.item WHERE id = @id OR name = @name;";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", item.id);
+                    cmd.Parameters.AddWithValue("@name", item.name);
+
+                    var test = Convert.ToInt64(await cmd.ExecuteNonQueryAsync());
+
+                    if (test == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+
+        public static async Task<bool> addItem(item item)
+        {
+            using (var conn = new NpgsqlConnection(constring))
+            {
+                await conn.OpenAsync();
+                string query = "INSERT INTO computer_shop.item  (description, cost, name) VALUES (@description, @cost, @name);";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@description", item.description);
+                    cmd.Parameters.AddWithValue("@name", item.name);
+                    cmd.Parameters.AddWithValue("@cost", item.cost);
+
+                    var test = Convert.ToInt64(await cmd.ExecuteNonQueryAsync());
+
+                    if (test == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

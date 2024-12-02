@@ -33,11 +33,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Text="Тестовое имя" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Text="" MinWidth="150" x:Name="tbAddName" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
             <TextBlock Grid.Column="1" Text="Описание" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="Тестовое описание" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="" MinWidth="150" x:Name="tbAddDesc" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
             <TextBlock Grid.Column="2" Text="Цена" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Grid.Column="2" Text="Тестовая цена" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="" MinWidth="150" x:Name="tbAddCost" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center" PreviewTextInput="tbAddCost_PreviewTextInput"/>
         </Grid>
         <Button Content="Изменить позицию" Grid.Row="2" x:Name="btEditPos" Click="btEditPos_Click"/>
         <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3">
@@ -51,11 +51,11 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <TextBlock Text="Название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Text="Тестовое имя" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Text="" x:Name="tbEditName" MinWidth="150" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
             <TextBlock Grid.Column="1" Text="Описание" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="Тестовое описание" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Text="" x:Name="tbEditDesc" MinWidth="150" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
             <TextBlock Grid.Column="2" Text="Цена" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Grid.Column="2" Text="Тестовая цена" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="" x:Name="tbEditCost" MinWidth="150" FontSize="25" HorizontalAlignment="center" VerticalAlignment="Center"/>
         </Grid>
         <Button Content="Удалить позицию" Grid.Row="3" x:Name="btDelPos" Click="btDelPos_Click"/>
         <Grid Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3">
@@ -64,15 +64,16 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="40*"/>
-                <ColumnDefinition Width="20*"/>
-                <ColumnDefinition Width="40*"/>
+                <ColumnDefinition Width="23*"/>
+                <ColumnDefinition Width="25*"/>
+                <ColumnDefinition Width="24*"/>
+                <ColumnDefinition Width="48*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Text="id" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="1" Text="Тестовое id" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBlock Grid.Column="1" Text="Или" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="2"/>
-            <TextBlock Grid.Column="2" Text="Название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="2" Grid.Row="1" Text="Тестовое название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Text="id" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="tbDelId" Grid.Row="1" Text="" MinWidth="200" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center" PreviewTextInput="tbDelId_PreviewTextInput" Grid.ColumnSpan="2"/>
+            <TextBlock Grid.Column="2" Text="Или" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.RowSpan="2" Margin="0,27,0,0"/>
+            <TextBlock Grid.Column="3" Text="Название" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="tbDelName" Grid.Column="3" Grid.Row="1" Text="" MinWidth="200" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         <Button Content="Экспортировать данные" Grid.Row="4" Grid.ColumnSpan="4" x:Name="btExport" Click="btExport_Click"/>
     </Grid>
